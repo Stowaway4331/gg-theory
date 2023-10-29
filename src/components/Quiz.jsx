@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import Question from "./Question";
 import { useNavigate } from "react-router-dom";
 
-const apiKey = '5Jyw4skYJwBJSAQ4fQMtlDPUxb5kaVAIyIDmx21Y';
+
+const apiKey = import.meta.env.VITE_QUIZ_API_KEY;
 const limit = 10;
 const category = 'Linux';
 const difficulty = 'easy';
