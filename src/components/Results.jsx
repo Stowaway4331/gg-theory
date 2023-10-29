@@ -5,8 +5,6 @@ const Results = () => {
 
     const {state} = useLocation();
     const {answered} = state;
-    
-    console.log(answered);
 
     const [correct, setCorrect] = useState(0);
     const [incorrect, setIncorrect] = useState(0);

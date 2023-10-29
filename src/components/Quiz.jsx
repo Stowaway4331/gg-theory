@@ -74,7 +74,6 @@ const Quiz = () => {
                             }} >Prev</button>
                             <button onClick={() => {
                                 if (quizIndex === limit - 1) {
-                                    console.log(answered);
                                     navigate('/results', { state: { answered: answered } });
                                 }
                                 else setQuizIndex(quizIndex => quizIndex + 1);
