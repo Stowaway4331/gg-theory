@@ -25,10 +25,6 @@ function App() {
   return (
     <div className='h-screen w-screen flex px-4'>
       <div className='w-max m-auto'>
-        {/* <Welcome />
-        <Quiz />
-        <Results /> */}
-
         <RouterProvider router={router} />
       </div>
     </div>
