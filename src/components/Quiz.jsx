@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
 import Question from "./Question";
-import { useNavigate } from "react-router-dom";
-
-
-const apiKey = import.meta.env.VITE_QUIZ_API_KEY;
-const limit = 10;
-const category = 'Linux';
-const difficulty = 'easy';
-
-const apiUrl = `https://quizapi.io/api/v1/questions?apiKey=${apiKey}&limit=${limit}&category=${category}&difficulty=${difficulty}`;
+import { useNavigate, useLocation } from "react-router-dom";
+import { limit } from '../Constants'
 
 const answered = Array.from({ length: limit }, () => ({
     selected: -1,
@@ -20,23 +13,13 @@ const Quiz = () => {
 
     const navigate = useNavigate();
 
-    const [data, setData] = useState([]);
     const [questions, setQuestions] = useState([]);
     const [options, setOptions] = useState([]);
     const [answers, setAnswers] = useState([]);
     const [quizIndex, setQuizIndex] = useState(0);
 
-    const getQuestions = async () => {
-        const res = await fetch(apiUrl);
-        const newdata = await res.json();
-
-        setData(newdata);
-        // console.log(newdata);
-    }
-
-    useEffect(() => {
-        getQuestions();
-    }, [])
+    const { state } = useLocation();
+    const { data } = state;
 
     useEffect(() => {
         const newQuestions = [];
