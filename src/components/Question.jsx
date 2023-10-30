@@ -15,14 +15,14 @@ const Question = ({ question, options, answers, answered, quizIndex }) => {
             const optionButtons = document.querySelectorAll('.option_button');
             optionButtons.forEach((button, index) => {
                 if (typeof answers === "object" && Object.entries(answers)[index][1] === "true") {
-                    button.style.backgroundColor = "green";
+                    button.style.backgroundColor = "#0f09";
                     if (answered[quizIndex].selected === index) {
                         answered[quizIndex].correct = true;
                     }
                 } else {
-                    button.style.backgroundColor = "red";
+                    button.style.backgroundColor = "#f009";
                     if (answered[quizIndex].selected === index) {
-                        button.style.backgroundColor = 'blue'
+                        button.style.backgroundColor = '#00f9'
                     }
                 }
             })
